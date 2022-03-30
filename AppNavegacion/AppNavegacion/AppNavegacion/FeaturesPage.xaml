@@ -1,0 +1,18 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<TabbedPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="AppNavegacion.FeaturesPage">
+  <!--Pages can be added as references or inline-->
+    <ContentPage Title="Rentar">
+        <StackLayout>
+            <Label>Puedes rentar bienes raices</Label>
+            <Label>Los bienes raices pueden ser terrenos, apartamentos, casas, etc.</Label>
+        </StackLayout>
+    </ContentPage>
+    <ContentPage Title="Comprar">
+        <Label>Puedes comprar bienes raices</Label>
+    </ContentPage>
+    <ContentPage Title="Vender" >
+        <Label>Puedes vender bienes raices</Label>
+    </ContentPage>
+</TabbedPage>

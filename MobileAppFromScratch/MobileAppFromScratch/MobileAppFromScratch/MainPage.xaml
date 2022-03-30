@@ -1,0 +1,22 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="MobileAppFromScratch.MainPage">
+
+    <StackLayout>
+        <Label Text="Prueba de Xamarin Forms" x:Name="label1"></Label>
+        <Label Text="Nombre:"></Label>
+        <Entry x:Name="FirstNameLabel" ></Entry>
+        <Label Text="Fecha de nacimiento:"></Label>
+        <DatePicker x:Name="DobDatePicker"></DatePicker>
+        <Label Text="Desea recibir notificaciones"></Label>
+        <Switch x:Name="NotificationsSwitch"></Switch>
+        <Label Text="Rango Salarial"></Label>
+        <Slider Minimum="0" Maximum="100000" x:Name="SalarySlider"></Slider>
+        <Label Text="Tipo de notificaciones"></Label>
+        <Editor x:Name="NotificationTypeEditor"></Editor>
+        <Button Text="Haga Click" x:Name="Button1" Clicked="Button1_Clicked"></Button>
+        <Button Text="Haga Click" x:Name="Button2" Clicked="Button2_Clicked"></Button>
+    </StackLayout>
+
+</ContentPage>

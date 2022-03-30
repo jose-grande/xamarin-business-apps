@@ -1,0 +1,26 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="FlyoutApp.Views.BlogPage">
+    <ContentPage.Content>
+        <Grid>
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="3*"></ColumnDefinition>
+                <ColumnDefinition Width="7*"></ColumnDefinition>
+            </Grid.ColumnDefinitions>
+            <Grid.RowDefinitions>
+                <RowDefinition Height="Auto"></RowDefinition>
+                <RowDefinition Height="Auto"></RowDefinition>
+                <RowDefinition Height="Auto"></RowDefinition>
+                <RowDefinition Height="Auto"></RowDefinition>
+            </Grid.RowDefinitions>
+            <Label FontSize="Header" Grid.ColumnSpan="2">New Blog</Label>
+            <Label Grid.Row="1" Grid.Column="0">Title:</Label>
+            <Entry Grid.Row="1" Grid.Column="1" Placeholder="Blog title"></Entry>
+            <Label Grid.Row="2" Grid.Column="0">Tags:</Label>
+            <Entry Grid.Row="2" Grid.Column="1" Placeholder="Blog tags"></Entry>
+            <Label Grid.Row="3" Grid.Column="0">Category:</Label>
+            <Entry Grid.Row="3" Grid.Column="1" Placeholder="Blog category"></Entry>
+        </Grid>
+    </ContentPage.Content>
+</ContentPage>

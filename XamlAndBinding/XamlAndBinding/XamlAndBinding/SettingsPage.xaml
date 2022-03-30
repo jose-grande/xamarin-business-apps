@@ -1,0 +1,34 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="XamlAndBinding.SettingsPage">
+    <ContentPage.Content>
+        <StackLayout>
+            <Frame BackgroundColor="#cccccc">
+            <Label x:Name="titleLabel" HorizontalOptions="CenterAndExpand" FontSize="15" TextColor="#FF0000" FontAttributes="Bold">
+                <Label.Text>Titulo</Label.Text>
+                    <Label.FontFamily>Arial</Label.FontFamily>
+            </Label>
+            </Frame>
+            <Grid>
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="3*"></ColumnDefinition>
+                    <ColumnDefinition Width="7*"></ColumnDefinition>
+                </Grid.ColumnDefinitions>
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="Auto"></RowDefinition>
+                    <RowDefinition Height="Auto"></RowDefinition>
+                    <RowDefinition Height="Auto"></RowDefinition>
+                </Grid.RowDefinitions>
+                <Label FontAttributes="Bold" FontSize="17" Text="Device Name:" Grid.Column="0" Grid.Row="0" VerticalOptions="Center"></Label>
+                <Entry Placeholder="Device name" Grid.Column="1" Grid.Row="0"></Entry>
+                <Label Text="Rotación:" Grid.Row="1" Grid.Column="0" FontSize="17" VerticalOptions="Center"></Label>
+                <StackLayout Grid.Row="1" Grid.Column="1">
+                    <Slider Minimum="0" Maximum="180" x:Name="RotationSlider" ValueChanged="RotationSlider_ValueChanged"></Slider>
+                    <Label x:Name="RotationValueLabel"></Label>
+                </StackLayout>
+                <Label Grid.Row="2" Grid.ColumnSpan="2" x:Name="RotatedLabel" Text="This text should turn around"></Label>
+            </Grid>
+        </StackLayout>
+    </ContentPage.Content>
+</ContentPage>

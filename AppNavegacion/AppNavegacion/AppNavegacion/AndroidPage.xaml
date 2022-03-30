@@ -1,0 +1,14 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="AppNavegacion.AndroidPage" Appearing="ContentPage_Appearing">
+    <ContentPage.Content>
+        <StackLayout>
+            <Label Text="Xamarin.Forms permite desarrollar para Android"
+                VerticalOptions="CenterAndExpand" 
+                HorizontalOptions="CenterAndExpand" x:Name="InfoLabel" />
+            <Button x:Name="BackButton" Text="Volver" Clicked="BackButton_Clicked"></Button>
+            <Button x:Name="DetailsButton" Text="Detalles" Clicked="DetailsButton_Clicked"></Button>
+        </StackLayout>
+    </ContentPage.Content>
+</ContentPage>

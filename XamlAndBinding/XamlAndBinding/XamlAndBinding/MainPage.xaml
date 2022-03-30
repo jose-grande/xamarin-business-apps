@@ -1,0 +1,12 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="XamlAndBinding.MainPage">
+
+    <StackLayout>
+        <Button x:Name="SettingsButton" Text="Settings" Clicked="SettingsButton_Clicked"></Button>
+        <Button x:Name="SettingsWithBindingButton" Text="Settings with Binding" Clicked="SettingsWithBindingButton_Clicked"></Button>
+        <Button x:Name="PersonalInfoButton" Text="Personal Info" Clicked="PersonalInfoButton_Clicked"></Button>
+    </StackLayout>
+
+</ContentPage>

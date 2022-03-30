@@ -1,0 +1,20 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="FlyoutApp.Views.SettingsPage">
+    <ContentPage.Content>
+        <ScrollView>
+            <Label>
+                Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc vitae tellus odio. Phasellus pulvinar, felis non posuere pretium, nibh ipsum dignissim libero, sed pulvinar leo nisi eu neque. Donec volutpat justo dui, ac porta massa placerat nec. Nam eros mi, efficitur nec laoreet nec, aliquet et enim. Fusce tempor diam sit amet sollicitudin placerat. Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. Vestibulum at venenatis nisl. Quisque gravida leo sed posuere commodo. Mauris accumsan magna sapien, eget maximus nibh euismod sit amet. Mauris lobortis enim quis lorem sagittis pulvinar sed et mi. Maecenas bibendum, dolor a placerat fermentum, est metus mollis nibh, nec auctor dolor turpis in justo. Nullam vitae aliquam est.
+
+Aliquam sed libero ornare velit commodo egestas ac vel turpis. Fusce sodales sollicitudin orci, tincidunt eleifend massa posuere sed. In magna nunc, ullamcorper a vehicula ac, dictum ac elit. Ut scelerisque vitae dolor in sollicitudin. Morbi sagittis urna nec ligula cursus, eget mollis erat malesuada. Sed gravida risus at augue sollicitudin interdum. Suspendisse elementum sagittis leo, ut ullamcorper neque accumsan id. Integer hendrerit ligula eu arcu imperdiet, vel malesuada risus pretium. Nam lobortis tristique egestas. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Pellentesque a justo erat. Donec faucibus velit in massa posuere laoreet. Sed nisi ex, feugiat vitae mauris id, sollicitudin accumsan sem.
+
+Integer erat sapien, mattis vel tellus quis, convallis blandit nibh. Aliquam erat volutpat. Nunc a tincidunt orci. Ut ex erat, ornare quis risus a, dignissim dignissim metus. Suspendisse facilisis, orci eu cursus vulputate, ligula orci auctor diam, sed tristique metus velit ut nulla. Aenean feugiat ipsum quis magna ullamcorper euismod. Phasellus iaculis ante nec nunc porta, in pharetra leo congue. Ut imperdiet ligula ac est luctus imperdiet. Fusce egestas odio felis, nec ultricies ex molestie sed. In sed ornare augue, a hendrerit urna. Mauris auctor massa vitae leo auctor, vitae mollis orci interdum. Nulla facilisi. Vestibulum vitae aliquam sem. Praesent sit amet nulla tincidunt, sollicitudin enim vitae, lacinia nulla.
+
+Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos. Nunc id tempus diam. Praesent malesuada vulputate turpis eu auctor. Sed lacus sem, maximus eget pulvinar vel, aliquet nec libero. Phasellus sagittis porttitor velit, vitae tristique est posuere nec. Curabitur lobortis neque a libero aliquam, at ultrices purus placerat. Suspendisse id lorem ornare tellus posuere ornare vitae ullamcorper nibh. Donec feugiat nec metus non convallis. Praesent efficitur mi erat, eu facilisis orci vestibulum ut. Nam orci quam, ornare eget libero et, euismod pretium nibh. Nunc vulputate ex ac nisl suscipit, a aliquam nisl varius. Sed volutpat pellentesque diam, non imperdiet elit consectetur in. Morbi finibus id ligula sit amet porttitor.
+
+Sed eget metus gravida, rutrum massa vitae, lacinia ex. Ut lobortis sem vitae sapien varius, id consequat urna pulvinar. Mauris non urna lorem. Morbi condimentum tincidunt elit, sed sodales enim iaculis quis. Aliquam erat volutpat. Phasellus ut quam condimentum, interdum ante fringilla, laoreet lectus. Suspendisse tempus tempor lobortis. Donec dui metus, vulputate vel interdum et, elementum at mauris. Integer id eros ut metus euismod congue.
+            </Label>
+        </ScrollView>
+    </ContentPage.Content>
+</ContentPage>

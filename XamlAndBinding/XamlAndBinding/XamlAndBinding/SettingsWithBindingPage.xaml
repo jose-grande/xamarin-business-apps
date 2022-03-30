@@ -1,0 +1,21 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="XamlAndBinding.SettingsWithBindingPage">
+    <ContentPage.Content>
+        <StackLayout>
+            <Slider x:Name="RotationSlider" Minimum="0" Maximum="360"></Slider>
+            <Label x:Name="RotationLabel" BindingContext="{x:Reference RotationSlider}" Text="{Binding Value}"></Label>
+            <Label x:Name="RotatedLabel" HorizontalOptions="CenterAndExpand" BindingContext="{x:Reference RotationSlider}" 
+                   Rotation="{Binding Value}">This label should be rotated</Label>
+            <Stepper Minimum="0" Maximum="50" Value="12" x:Name="FontSizeStepper"></Stepper>
+            <Label Text="Font size changing" FontSize="{Binding Source={x:Reference FontSizeStepper}, Path=Value}"></Label>
+            <Stepper Minimum="0" Maximum="50" Value="12" x:Name="FontSizeStepper2"></Stepper>
+            <Label Text="Font size changing">
+                <Label.FontSize>
+                    <Binding Source="{x:Reference FontSizeStepper2}" Path="Value"></Binding>
+                </Label.FontSize>
+            </Label>
+        </StackLayout>
+    </ContentPage.Content>
+</ContentPage>
