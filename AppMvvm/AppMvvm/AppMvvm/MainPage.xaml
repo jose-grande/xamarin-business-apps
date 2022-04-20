@@ -1,0 +1,37 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="AppMvvm.MainPage"
+             xmlns:viewmodels="clr-namespace:AppMvvm.ViewModel"
+             xmlns:model="clr-namespace:AppMvvm.Model">
+
+    <StackLayout>
+        <Frame BackgroundColor="#2196F3" Padding="24" CornerRadius="0">
+            <Label Text="{Binding Titulo}" HorizontalTextAlignment="Center" TextColor="White" FontSize="36"/>
+        </Frame>
+        <ListView x:Name="noticiasListView" ItemsSource="{Binding Noticias}">
+            <ListView.ItemTemplate>
+                <DataTemplate>
+                    <ViewCell>
+                        <ViewCell.View>
+                            <StackLayout>
+                                <Label Text="{Binding Titulo}"></Label>
+                                <StackLayout.GestureRecognizers>
+                                    <TapGestureRecognizer 
+                                        NumberOfTapsRequired="1"
+                                        Command="{Binding Source={RelativeSource AncestorType={x:Type viewmodels:NoticiasViewModel}}, Path=VerNoticiaCommand}"
+                                        CommandParameter="{Binding .}"></TapGestureRecognizer>
+                                </StackLayout.GestureRecognizers>
+                            </StackLayout>
+                        </ViewCell.View>
+                    </ViewCell>
+                </DataTemplate>
+            </ListView.ItemTemplate>
+        </ListView>
+        <Button Text="Consultar" Command="{Binding CargarNoticiasCommand}"></Button>
+        <Button Text="Nueva" Command="{Binding NuevaNoticiaCommand}"></Button>
+        <Button Text="Ver Categorias" Command="{Binding VerCategoriasCommand}"></Button>
+    </StackLayout>
+
+
+</ContentPage>

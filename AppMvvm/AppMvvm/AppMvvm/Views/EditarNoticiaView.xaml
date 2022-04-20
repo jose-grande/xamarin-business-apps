@@ -1,0 +1,29 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="AppMvvm.Views.EditarNoticiaView">
+    <ContentPage.Content>
+        <StackLayout>
+            <Label Text="Nueva Noticia" FontSize="Subtitle"/>
+            <Grid>
+                <Grid.RowDefinitions>
+                    <RowDefinition></RowDefinition>
+                    <RowDefinition></RowDefinition>
+                </Grid.RowDefinitions>
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="3*"></ColumnDefinition>
+                    <ColumnDefinition Width="7*"></ColumnDefinition>
+                </Grid.ColumnDefinitions>
+                <Label Text="Titulo:"></Label>
+                <Entry Text="{Binding Titulo}" Grid.Column="1" Grid.Row="0"></Entry>
+                <Label Text="Cuerpo:" Grid.Column="0" Grid.Row="1"></Label>
+                <Entry Text="{Binding Cuerpo}" Grid.Column="1" Grid.Row="1"></Entry>
+            </Grid>
+            <StackLayout Orientation="Horizontal">
+                <Button Text="Guardar" Command="{Binding GuardarCommand}"></Button>
+                <Button Text="Cancelar" Command="{Binding CancelarCommand}"></Button>
+            </StackLayout>
+            
+        </StackLayout>
+    </ContentPage.Content>
+</ContentPage>
