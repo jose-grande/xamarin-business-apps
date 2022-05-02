@@ -1,0 +1,24 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="SQLiteApp.Views.NoticiasPage"
+             Title="{Binding TituloPagina}">
+    <ContentPage.Content>
+        <StackLayout>
+            <ListView ItemsSource="{Binding Noticias}">
+                <ListView.ItemTemplate>
+                    <DataTemplate>
+                        <ViewCell>
+                            <ViewCell.View>
+                                <StackLayout>
+                                    <Label Text="{Binding Titulo}"></Label>
+                                </StackLayout>
+                            </ViewCell.View>
+                        </ViewCell>
+                    </DataTemplate>
+                </ListView.ItemTemplate>
+            </ListView>
+            <Button Text="Refrescar" Command="{Binding RefrescarDatosCommand}"></Button>
+        </StackLayout>
+    </ContentPage.Content>
+</ContentPage>

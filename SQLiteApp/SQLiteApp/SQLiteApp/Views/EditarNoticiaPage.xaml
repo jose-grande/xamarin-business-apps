@@ -1,0 +1,28 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="SQLiteApp.Views.EditarNoticiaPage"
+             Title="{Binding TituloPagina}">
+    <ContentPage.Content>
+        <StackLayout>
+            <Grid>
+                <Grid.RowDefinitions>
+                    <RowDefinition></RowDefinition>
+                    <RowDefinition></RowDefinition>
+                </Grid.RowDefinitions>
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition></ColumnDefinition>
+                    <ColumnDefinition></ColumnDefinition>
+                </Grid.ColumnDefinitions>
+                <Label Text="Titulo"></Label>
+                <Entry Grid.Column="1" Text="{Binding Titulo}"></Entry>
+                <Label Text="Cuerpo" Grid.Row="1"></Label>
+                <Entry Grid.Row="1" Grid.Column="1" Text="{Binding Cuerpo}"></Entry>
+            </Grid>
+            <StackLayout Orientation="Horizontal">
+                <Button Text="Guardar" Command="{Binding GuardarCommand}"></Button>
+                <Button Text="Cancelar" x:Name="CancelarButton" Clicked="CancelarButton_Clicked"></Button>
+            </StackLayout>
+        </StackLayout>
+    </ContentPage.Content>
+</ContentPage>
