@@ -36,3 +36,12 @@ VALUES
 (NEWID(), 'Hardware',SYSDATETIME(), 'admin@imagina.com',SYSDATETIME(), 'admin@imagina.com');
 GO
 SELECT * FROM Categorias;
+GO
+INSERT INTO Noticias
+VALUES
+(NEWID(),'.Net Core 6','Crea una aplicacion web en menos de 10 mins.'
+	,'566EF8EF-7DF3-4C34-BBBC-F58F72F729B9', SYSDATETIME(),SYSDATETIME(), 'admin',SYSDATETIME(), 'admin'),
+(NEWID(),'Kafka','Procesa el flujo de todos los mensajes IOT.'
+	,'566EF8EF-7DF3-4C34-BBBC-F58F72F729B9', SYSDATETIME(),SYSDATETIME(), 'admin',SYSDATETIME(), 'admin'),
+(NEWID(),'RabbitMQ','El message broker robusto que se ha popularizado.'
+	,'566EF8EF-7DF3-4C34-BBBC-F58F72F729B9', SYSDATETIME(),SYSDATETIME(), 'admin',SYSDATETIME(), 'admin')
