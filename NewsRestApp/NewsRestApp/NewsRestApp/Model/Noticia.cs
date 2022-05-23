@@ -9,7 +9,7 @@ namespace NewsRestApp.Model
         public Guid NoticiaId { get; set; }
         public string Titulo { get; set; }
         public string Cuerpo { get; set; }
-        public string FechaPublicacion { get; set; }
+        public DateTime FechaPublicacion { get; set; }
         public Guid CategoriaId { get; set; }
     }
 }

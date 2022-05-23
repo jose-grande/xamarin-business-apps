@@ -1,0 +1,16 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="NewsRestApp.Views.NuevaNoticiaPage">
+    <ContentPage.Content>
+        <StackLayout Padding="5">
+            <Label Text="Titulo"></Label>
+            <Entry Placeholder="Titulo" Text="{Binding Titulo}"></Entry>
+            <Label Text="Cuerpo"></Label>
+            <Entry Placeholder="Cuerpo" Text="{Binding Cuerpo}"></Entry>
+            <Label Text="Fecha Publicacion"></Label>
+            <DatePicker Date="{Binding FechaPublicacion}"></DatePicker>
+            <Button Text="Guardar" Command="{Binding GuardarCommand}"></Button>
+        </StackLayout>
+    </ContentPage.Content>
+</ContentPage>

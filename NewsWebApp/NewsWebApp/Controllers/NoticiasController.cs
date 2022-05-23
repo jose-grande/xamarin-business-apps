@@ -67,6 +67,7 @@ namespace NewsWebApp.Controllers
                 };
                 context.Noticias.Add(entity);
                 context.SaveChanges();
+                return Ok();
             }
             return UnprocessableEntity(ModelState);
         }

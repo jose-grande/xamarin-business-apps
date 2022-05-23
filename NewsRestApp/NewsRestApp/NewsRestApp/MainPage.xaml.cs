@@ -1,4 +1,5 @@
-﻿using System;
+﻿using NewsRestApp.Views;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Linq;
@@ -13,6 +14,11 @@ namespace NewsRestApp
         public MainPage()
         {
             InitializeComponent();
+        }
+
+        private void noticiasButton_Clicked(object sender, EventArgs e)
+        {
+            Navigation.PushAsync(new NoticiasPage());
         }
     }
 }

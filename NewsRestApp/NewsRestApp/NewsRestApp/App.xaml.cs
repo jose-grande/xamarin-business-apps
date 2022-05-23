@@ -10,19 +10,20 @@ namespace NewsRestApp
 {
     public partial class App : Application
     {
-        public INewsWebService Service { get; }
+        private static INewsWebService _service;
+        public static INewsWebService Service => _service == null ? (_service = new NewsWebService()) : _service;
         public App()
         {
             InitializeComponent();
 
-            MainPage = new MainPage();
-            Service = new NewsWebService();
-            //Service.Consultar();
-            List<Noticia> noticias = Service.Consultar();
-            foreach (var item in noticias)
-            {
-                Debug.WriteLine("  - " + item.Titulo);
-            }
+            MainPage = new NavigationPage(new MainPage());
+            //Service = new NewsWebService();
+            ////Service.Consultar();
+            //List<Noticia> noticias = Service.Consultar();
+            //foreach (var item in noticias)
+            //{
+            //    Debug.WriteLine("  - " + item.Titulo);
+            //}
         }
 
         protected override void OnStart()

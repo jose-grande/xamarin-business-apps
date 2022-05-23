@@ -9,5 +9,7 @@ namespace NewsRestApp.Services
     public interface INewsWebService
     {
         List<Noticia> Consultar();
+        void AgregarNoticia(Noticia noticia);
+        List<Categoria> ConsultarCategorias();
     }
 }
