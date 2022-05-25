@@ -13,11 +13,13 @@ namespace NewsRestApp.ViewModel
         public ObservableCollection<Noticia> Noticias { get; set; }
         public Command RefrescarCommand { get; set; }
         public Command NuevaNoticiaCommand { get; set; }
+        public Command<Noticia> EditarNoticiaCommand { get; set; }
         public NoticiasViewModel()
         {
             Noticias = new ObservableCollection<Noticia>();
             RefrescarCommand = new Command(Refrescar);
             NuevaNoticiaCommand = new Command(NuevaNoticia);
+            EditarNoticiaCommand = new Command<Noticia>(EditarNoticia);
             Title = "Noticias";
         }
         public void Refrescar()
@@ -33,7 +35,11 @@ namespace NewsRestApp.ViewModel
         }
         public void NuevaNoticia()
         {
-            App.Current.MainPage.Navigation.PushAsync(new NuevaNoticiaPage());
+            App.Current.MainPage.Navigation.PushAsync(new NuevaNoticiaPage(new Noticia { NoticiaId=Guid.Empty}));
+        }
+        public void EditarNoticia(Noticia noticia)
+        {
+            App.Current.MainPage.Navigation.PushAsync(new NuevaNoticiaPage(noticia));
         }
     }
 }

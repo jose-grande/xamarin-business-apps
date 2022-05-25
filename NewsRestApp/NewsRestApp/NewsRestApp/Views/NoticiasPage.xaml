@@ -2,7 +2,8 @@
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              x:Class="NewsRestApp.Views.NoticiasPage"
-             Title="{Binding Title}">
+             Title="{Binding Title}"
+             xmlns:local="clr-namespace:NewsRestApp.ViewModel">
     <ContentPage.ToolbarItems>
         <ToolbarItem Text="Nuevo" Command="{Binding NuevaNoticiaCommand}"></ToolbarItem>
     </ContentPage.ToolbarItems>
@@ -11,10 +12,18 @@
             <CollectionView ItemsSource="{Binding Noticias}">
                 <CollectionView.ItemTemplate>
                     <DataTemplate>
-                        <StackLayout Padding="5">
+                        <Frame CornerRadius="0.5" BorderColor="Blue">
+                        <StackLayout Padding="10">
                             <Label Text="{Binding Titulo}" FontSize="16"></Label>
                             <Label Text="{Binding Cuerpo}" FontSize="13"></Label>
+                            <StackLayout.GestureRecognizers>
+                                <TapGestureRecognizer
+                                    NumberOfTapsRequired="1"
+                                    Command="{Binding Source={RelativeSource AncestorType={x:Type local:NoticiasViewModel}}, Path=EditarNoticiaCommand}"
+                                    CommandParameter="{Binding .}"></TapGestureRecognizer>
+                            </StackLayout.GestureRecognizers>
                         </StackLayout>
+                        </Frame>
                     </DataTemplate>
                 </CollectionView.ItemTemplate>
             </CollectionView>

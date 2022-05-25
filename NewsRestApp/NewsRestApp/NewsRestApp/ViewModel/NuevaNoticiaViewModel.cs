@@ -2,6 +2,7 @@
 using System;
 using System.Collections.Generic;
 using System.Collections.ObjectModel;
+using System.Linq;
 using System.Text;
 using Xamarin.Forms;
 
@@ -9,8 +10,8 @@ namespace NewsRestApp.ViewModel
 {
     public class NuevaNoticiaViewModel: ViewModelBase
     {
-        private Guid _noticiaId;
         private string _titulo;
+        private Noticia _noticia;
 
         public string Titulo
         {
@@ -32,28 +33,60 @@ namespace NewsRestApp.ViewModel
             set { _fechaPublicacion = value; NotifyPropertyChanged(nameof(FechaPublicacion)); }
         }
 
+        private Categoria _categoriaSeleccionada;
+
+        public Categoria CategoriaSeleccionada
+        {
+            get { return _categoriaSeleccionada; }
+            set { _categoriaSeleccionada = value; }
+        }
+
+
         public Command GuardarCommand { get; set; }
         public ObservableCollection<Categoria> Categorias { get; set; }
-        public NuevaNoticiaViewModel()
+        public NuevaNoticiaViewModel(Noticia noticia)
         {
-            Title = "Nueva Noticia";
+            
             GuardarCommand = new Command(Guardar);
-            _noticiaId = Guid.NewGuid();
-            this.FechaPublicacion = DateTime.Now;
+            _noticia = noticia;
             Categorias = new ObservableCollection<Categoria>();
             RefrescarCategorias();
+
+            if (_noticia.NoticiaId == Guid.Empty)
+            {
+                Title = "Nueva Noticia";
+                this.FechaPublicacion = DateTime.Now;
+            }
+            else
+            {
+                Title = "Modificar Noticia";
+                Titulo = noticia.Titulo;
+                Cuerpo = noticia.Cuerpo;
+                FechaPublicacion = noticia.FechaPublicacion;
+                CategoriaSeleccionada = Categorias.FirstOrDefault(c => c.CategoriaId == noticia.CategoriaId);
+            }
+            
+            
         }
         public void Guardar()
         {
             var noticia = new Noticia
             {
-                NoticiaId = _noticiaId,
+                NoticiaId = _noticia.NoticiaId,
                 Titulo = Titulo,
                 Cuerpo = Cuerpo,
                 FechaPublicacion = FechaPublicacion,
-                CategoriaId = Guid.Parse("566EF8EF-7DF3-4C34-BBBC-F58F72F729B9")
+                CategoriaId = CategoriaSeleccionada.CategoriaId
             };
-            App.Service.AgregarNoticia(noticia);
+            if (_noticia.NoticiaId == Guid.Empty)
+            {
+                App.Service.AgregarNoticia(noticia);
+            }
+            else
+            {
+                App.Service.ModificarNoticia(noticia);
+            }
+            
         }
         public void RefrescarCategorias()
         {

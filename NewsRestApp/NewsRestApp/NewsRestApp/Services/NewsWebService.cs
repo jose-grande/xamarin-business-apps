@@ -5,6 +5,7 @@ using System.Diagnostics;
 using System.Net.Http;
 using System.Text;
 using System.Threading.Tasks;
+using Xamarin.Essentials;
 
 namespace NewsRestApp.Services
 {
@@ -16,7 +17,8 @@ namespace NewsRestApp.Services
         private string categoriasUri;
         public NewsWebService()
         {
-            baseUri= "https://localhost:5001";
+            //baseUri= "https://localhost:5001";
+            baseUri = "https://127.0.0.1:5001";
             noticiasUri = $"{baseUri}/api/noticias";
             categoriasUri = $"{baseUri}/api/categorias";
 
@@ -69,6 +71,24 @@ namespace NewsRestApp.Services
             request.Content = new StringContent(json, Encoding.UTF8, "application/json");
             //request.Headers.Add("X-API-KEY", "654654654654");
             //request.Headers.Authorization = new System.Net.Http.Headers.AuthenticationHeaderValue("bearer", "token");
+            var response = client.SendAsync(request).Result;
+            if (response.IsSuccessStatusCode)
+            {
+                string content = response.Content.ReadAsStringAsync().Result;
+                //result = Newtonsoft.Json.JsonConvert.DeserializeObject<List<Noticia>>(content);
+                Debug.WriteLine(content);
+            }
+            else
+            {
+                Debug.WriteLine(string.Format("Ha ocurrido un error al consultar las noticias: {0}", response.ReasonPhrase));
+            }
+        }
+        public void ModificarNoticia(Noticia noticia)
+        {
+            var uri = $"{noticiasUri}/{noticia.NoticiaId}";
+            var request = new HttpRequestMessage(HttpMethod.Put, uri);
+            var json = Newtonsoft.Json.JsonConvert.SerializeObject(noticia);
+            request.Content = new StringContent(json, Encoding.UTF8, "application/json");
             var response = client.SendAsync(request).Result;
             if (response.IsSuccessStatusCode)
             {

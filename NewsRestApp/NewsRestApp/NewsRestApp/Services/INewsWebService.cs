@@ -10,6 +10,7 @@ namespace NewsRestApp.Services
     {
         List<Noticia> Consultar();
         void AgregarNoticia(Noticia noticia);
+        void ModificarNoticia(Noticia noticia);
         List<Categoria> ConsultarCategorias();
     }
 }

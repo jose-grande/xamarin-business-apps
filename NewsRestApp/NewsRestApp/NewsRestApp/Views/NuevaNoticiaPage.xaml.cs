@@ -1,4 +1,5 @@
-﻿using NewsRestApp.ViewModel;
+﻿using NewsRestApp.Model;
+using NewsRestApp.ViewModel;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -13,10 +14,10 @@ namespace NewsRestApp.Views
     [XamlCompilation(XamlCompilationOptions.Compile)]
     public partial class NuevaNoticiaPage : ContentPage
     {
-        public NuevaNoticiaPage()
+        public NuevaNoticiaPage(Noticia noticia)
         {
             InitializeComponent();
-            BindingContext = new NuevaNoticiaViewModel();
+            BindingContext = new NuevaNoticiaViewModel(noticia);
         }
     }
 }
