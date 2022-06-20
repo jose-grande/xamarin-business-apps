@@ -1,0 +1,18 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="EssentialsTest.MainPage">
+
+    <StackLayout>
+        <Frame BackgroundColor="#2196F3" Padding="24" CornerRadius="0">
+            <Label Text="Welcome to Xamarin.Forms!" HorizontalTextAlignment="Center" TextColor="White" FontSize="36"/>
+        </Frame>
+        <Button x:Name="SayHelloButton" Clicked="SayHelloButton_Clicked" Text="Say Hello"></Button>
+        <Button x:Name="GetLocationButton" Clicked="GetLocationButton_Clicked" Text="Get Location"></Button>
+        <Label FontSize="16" Padding="30,24,30,0" x:Name="LocationLabel"></Label>
+        <Button x:Name="CameraButton" Clicked="CameraButton_Clicked" Text="Get Picture"></Button>
+        <Label x:Name="PhotoPathLabel"></Label>
+        <Image x:Name="CameraPictureImage"></Image>
+    </StackLayout>
+
+</ContentPage>
