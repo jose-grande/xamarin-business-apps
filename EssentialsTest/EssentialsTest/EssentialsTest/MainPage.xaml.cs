@@ -31,15 +31,15 @@ namespace EssentialsTest
             {
                 Debug.Fail(ex.Message);
             }
-            catch(FeatureNotEnabledException ex)
+            catch (FeatureNotEnabledException ex)
             {
                 Debug.Fail(ex.Message);
             }
-            catch(Exception ex)
+            catch (Exception ex)
             {
                 Debug.Fail(ex.Message);
             }
-            
+
         }
 
         private async void CameraButton_Clicked(object sender, EventArgs e)
@@ -65,7 +65,7 @@ namespace EssentialsTest
 
                 Debug.Fail(ex.Message);
             }
-            catch(PermissionException ex)
+            catch (PermissionException ex)
             {
                 Debug.Fail(ex.Message);
             }
@@ -78,6 +78,17 @@ namespace EssentialsTest
         private async void SayHelloButton_Clicked(object sender, EventArgs e)
         {
             await TextToSpeech.SpeakAsync("Hola mundo");
+        }
+
+        private async void OpenMapButton_Clicked(object sender, EventArgs e)
+        {
+            var location = await Geolocation.GetLastKnownLocationAsync();
+            await Map.OpenAsync(location, new MapLaunchOptions { NavigationMode = NavigationMode.Driving });
+        }
+
+        private async void OpenMapPageButton_Clicked(object sender, EventArgs e)
+        {
+            await Navigation.PushAsync(new MapPage());
         }
     }
 }

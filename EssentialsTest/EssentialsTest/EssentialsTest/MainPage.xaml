@@ -10,6 +10,8 @@
         <Button x:Name="SayHelloButton" Clicked="SayHelloButton_Clicked" Text="Say Hello"></Button>
         <Button x:Name="GetLocationButton" Clicked="GetLocationButton_Clicked" Text="Get Location"></Button>
         <Label FontSize="16" Padding="30,24,30,0" x:Name="LocationLabel"></Label>
+        <Button x:Name="OpenMapButton" Clicked="OpenMapButton_Clicked" Text="Abrir Mapa"></Button>
+        <Button x:Name="OpenMapPageButton" Clicked="OpenMapPageButton_Clicked" Text="Abrir Pagina Mapa"></Button>
         <Button x:Name="CameraButton" Clicked="CameraButton_Clicked" Text="Get Picture"></Button>
         <Label x:Name="PhotoPathLabel"></Label>
         <Image x:Name="CameraPictureImage"></Image>
